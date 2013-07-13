@@ -54,7 +54,10 @@ def main():
 
 	# go through real entry point once all is well
 	args = sys.argv[1:]
-	exit(subprocess.check_call([PYTHON, path.join(DIR, "src", "main.py")] + args))
+	# note that we don't use check_call - we don't personally care about the return code,
+	# just patching it through, so no reason to raise an error on non-zero return code
+	return_code = subprocess.call([PYTHON, path.join(DIR, "src", "main.py")] + args)
+	exit(return_code)
 
 def setup_virtualenv():
 	remove_virtualenv()
