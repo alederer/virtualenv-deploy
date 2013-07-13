@@ -43,12 +43,12 @@ def main():
 
 		# instead of directly reading PIP freeze, we read the cached version
 		# from when we last installed
-		prevRequirements = ""
+		prev_requirements = ""
 		if path.exists(PREV_REQUIREMENTS):
 			with open(PREV_REQUIREMENTS, "r") as file:
-				prevRequirements = file.read()
+				prev_requirements = file.read()
 
-		if requirements != prevRequirements:
+		if requirements != prev_requirements:
 			print("! requirements.txt has changed, reinstalling the virtualenv")
 			setup_virtualenv()
 
