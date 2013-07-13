@@ -1,11 +1,15 @@
 virtualenv-deploy
 =================
 
-virtualenv and pip are cool!  But how do you deploy a standalone Python application (with dependencies) conveniently to your team?  Say, a tool written in Python, required by non-technical team members who shouldn't have to mess with virtualenv or pip or whatever.
+What it does
+---------------------
 
-virtualenv-deploy is a simple script that allows you to deploy on remote machines and handles setting up a virtualenv for your application transparently (without installing anything on the system).  After the one-time virtualenv setup, on each subsequent run virtualenv-deploy simply passes control to your app, unless requirements.txt has changed, at which point it will update.
+virtualenv and pip are cool!  But how do you deploy a standalone Python application (with dependencies) conveniently to your team?  Say, a tool required by non-technical team members who shouldn't have to mess with virtualenv or pip or whatever.
 
-==How to use==
+virtualenv-deploy is a simple script that handles setting up a virtualenv for your application on remote machines transparently (without installing anything on the system).  After the one-time virtualenv setup, on each subsequent run virtualenv-deploy simply passes control to your app, unless requirements.txt has changed, at which point it will update.
+
+How to use
+---------------------
 
 What you'll check in to your repository for deployment is a folder containing the following:
 
@@ -15,7 +19,8 @@ What you'll check in to your repository for deployment is a folder containing th
 
 That's it.  No need to commit/check-in any virtualenv folders.  When your non-technical friend clones the repository to his/her machine and runs the top-level main.py with whatever arguments, your application will run (after a slight one-time delay during which it's setting up a virtualenv in the directory and installing dependencies).
 
-==Limitations==
+Limitations
+---------------------
 
 * Currently no Windows support - tar/gzip utilities aren't included as standard on Windows and untarring the virtualenv source wouldn't work.  Could possibly work around by requiring virtualenv to be installed globally for Windows machines, but that slightly defeats the purpose.
 
