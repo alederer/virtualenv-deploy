@@ -22,7 +22,7 @@ That's it.  No need to commit/check-in any virtualenv folders.  When your non-te
 Limitations
 ---------------------
 
-* Currently no Windows support - tar/gzip utilities aren't included as standard on Windows and untarring the virtualenv source wouldn't work.  Could possibly work around by requiring virtualenv to be installed globally for Windows machines, but that slightly defeats the purpose.
+* Currently no Windows support - tar/gzip utilities aren't included as standard on Windows, and we need to untar the virtualenv source after downloading it.  Could possibly work around by requiring virtualenv to be installed globally for Windows machines, but that slightly defeats the purpose.
 
 * Requires Python install - needs nothing fancy like virtualenv or pip, but it is a Python script.
 
