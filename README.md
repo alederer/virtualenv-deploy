@@ -13,11 +13,13 @@ How to use
 
 What you'll check in to your repository for deployment is a folder containing the following:
 
-* main.py (the entry-point and currently only file of virtualenv-deploy)
-* requirements.txt (your pip requirements, a la "pip freeze > requirements.txt")
-* src/main.py (entry-point to your real app)
+* __main__.py (the entry-point and currently only file of virtualenv-deploy)
+* requirements.txt (optional - your pip requirements, a la "pip freeze > requirements.txt")
+* src/entry.py (entry-point to your real app)
 
 That's it.  No need to commit/check-in any virtualenv folders.  When your non-technical friend clones the repository to his/her machine and runs the top-level main.py with whatever arguments, your application will run (after a slight one-time delay during which it's setting up a virtualenv in the directory and installing dependencies).
+
+The locations of the pip requirements file and app entry file are configurable through a CONFIG dictionary near the top of __main__.py.
 
 Limitations
 ---------------------
